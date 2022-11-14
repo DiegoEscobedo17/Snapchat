@@ -84,11 +84,155 @@
                     <connections>
                         <outlet property="emailTextField" destination="cCG-xe-6iD" id="7qS-lt-bfx"/>
                         <outlet property="passwordTextField" destination="hgt-al-wjM" id="t49-sg-zTR"/>
+                        <segue destination="fHx-0f-oGd" kind="presentation" identifier="iniciarsesionsegue" id="dNN-eX-0qx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="133" y="72"/>
+        </scene>
+        <!--Snaps View Controller-->
+        <scene sceneID="kAg-8u-piu">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="pZo-6y-2Un" customClass="SnapsViewController" customModule="EscobedoSnapchat" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5ex-Nu-snb">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="928-mS-rh8"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="p31-x7-9Eg">
+                        <barButtonItem key="leftBarButtonItem" title="Cerrar Sesion" id="RqO-z2-cs6">
+                            <connections>
+                                <action selector="cerrarSesionTapped:" destination="pZo-6y-2Un" id="dYA-fv-YPY"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="HbD-lo-sgn">
+                            <connections>
+                                <segue destination="BWJ-ey-HoI" kind="show" id="nkW-g0-COK"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iZA-0G-g0Q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1816" y="72"/>
+        </scene>
+        <!--Enviar Mensaje-->
+        <scene sceneID="5h8-fi-IhR">
+            <objects>
+                <viewController id="BWJ-ey-HoI" customClass="ImagenViewController" customModule="EscobedoSnapchat" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="anE-l4-VLj">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AWU-QB-DhO">
+                                <rect key="frame" x="87" y="108" width="240" height="128"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="Q34-1c-PCM"/>
+                                    <constraint firstAttribute="height" constant="128" id="fmH-qu-slV"/>
+                                </constraints>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Descripcion..." textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FYw-xn-lSR">
+                                <rect key="frame" x="87" y="251" width="240" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="w5T-XY-7Vt"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uqx-rn-lcg">
+                                <rect key="frame" x="87" y="305" width="240" height="34"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="dvo-Vi-uaT"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="tintColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <state key="normal" title="Elegir Contacto"/>
+                                <connections>
+                                    <action selector="elegirContactoTapped:" destination="BWJ-ey-HoI" eventType="touchUpInside" id="0bD-Vv-wos"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="FYw-xn-lSR" firstAttribute="top" secondItem="AWU-QB-DhO" secondAttribute="bottom" constant="15" id="Djr-7F-y3J"/>
+                            <constraint firstItem="FYw-xn-lSR" firstAttribute="centerX" secondItem="anE-l4-VLj" secondAttribute="centerX" id="ai0-ya-bu2"/>
+                            <constraint firstItem="Uqx-rn-lcg" firstAttribute="centerX" secondItem="anE-l4-VLj" secondAttribute="centerX" id="fkt-3e-Dx6"/>
+                            <constraint firstItem="Uqx-rn-lcg" firstAttribute="top" secondItem="FYw-xn-lSR" secondAttribute="bottom" constant="20" id="gas-Bt-92T"/>
+                            <constraint firstItem="AWU-QB-DhO" firstAttribute="centerX" secondItem="anE-l4-VLj" secondAttribute="centerX" id="pRG-Eh-piT"/>
+                            <constraint firstItem="AWU-QB-DhO" firstAttribute="top" secondItem="21x-OR-kIG" secondAttribute="top" constant="20" id="yJp-tV-tYo"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="21x-OR-kIG"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Enviar Mensaje" id="LHQ-MF-FjY">
+                        <barButtonItem key="rightBarButtonItem" systemItem="camera" id="lmu-dW-wN8">
+                            <connections>
+                                <action selector="camaraTapped:" destination="BWJ-ey-HoI" id="qK8-JT-x2O"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="descripcionTextField" destination="FYw-xn-lSR" id="U7q-5G-9EH"/>
+                        <outlet property="elegirContactoBoton" destination="Uqx-rn-lcg" id="Wkm-Aw-Tlz"/>
+                        <outlet property="imageView" destination="AWU-QB-DhO" id="a12-Lk-wUw"/>
+                        <segue destination="8b6-Yd-U0B" kind="show" identifier="seleccionarContactoSegue" id="jQJ-vb-O7A"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2tP-0i-aZJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2697" y="72"/>
+        </scene>
+        <!--Lista de Usuarios-->
+        <scene sceneID="FTu-Bi-GEd">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="8b6-Yd-U0B" customClass="ElegirUsuarioViewController" customModule="EscobedoSnapchat" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="arm-UT-qOn">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="pAG-3B-N3n">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="pAG-3B-N3n" firstAttribute="leading" secondItem="7jL-Fg-8Nt" secondAttribute="leading" id="2EV-6n-1k7"/>
+                            <constraint firstItem="7jL-Fg-8Nt" firstAttribute="trailing" secondItem="pAG-3B-N3n" secondAttribute="trailing" id="g46-sk-fYr"/>
+                            <constraint firstItem="7jL-Fg-8Nt" firstAttribute="bottom" secondItem="pAG-3B-N3n" secondAttribute="bottom" id="xiP-x5-Fge"/>
+                            <constraint firstItem="pAG-3B-N3n" firstAttribute="top" secondItem="7jL-Fg-8Nt" secondAttribute="top" id="yOf-Va-5MV"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="7jL-Fg-8Nt"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Lista de Usuarios" id="raN-90-s9G"/>
+                    <connections>
+                        <outlet property="listaUsuarios" destination="pAG-3B-N3n" id="nFg-cw-XQe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QCM-vu-Uf6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3513" y="72"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="kDI-ty-B3g">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" modalPresentationStyle="fullScreen" id="fHx-0f-oGd" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="1Lb-oJ-LUR">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="pZo-6y-2Un" kind="relationship" relationship="rootViewController" id="pqg-di-Gfp"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="adj-91-FPC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="951" y="72"/>
         </scene>
     </scenes>
     <resources>
