@@ -30,5 +30,7 @@
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
 	<string>1:471223509262:ios:364c4e84bb7354c632f75f</string>
+	<key>DATABASE_URL</key>
+	<string>https://snapchat-aa62f-default-rtdb.firebaseio.com</string>
 </dict>
 </plist>

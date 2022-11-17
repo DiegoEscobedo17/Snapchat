@@ -98,7 +98,19 @@
                     <view key="view" contentMode="scaleToFill" id="5ex-Nu-snb">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="E0C-aj-2xG">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="928-mS-rh8" firstAttribute="trailing" secondItem="E0C-aj-2xG" secondAttribute="trailing" id="4jn-gW-dag"/>
+                            <constraint firstItem="E0C-aj-2xG" firstAttribute="leading" secondItem="928-mS-rh8" secondAttribute="leading" id="Rzi-ZX-GlA"/>
+                            <constraint firstItem="E0C-aj-2xG" firstAttribute="top" secondItem="928-mS-rh8" secondAttribute="top" id="TpS-ki-EG0"/>
+                            <constraint firstItem="928-mS-rh8" firstAttribute="bottom" secondItem="E0C-aj-2xG" secondAttribute="bottom" id="YNP-jb-4PH"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="928-mS-rh8"/>
                     </view>
                     <navigationItem key="navigationItem" id="p31-x7-9Eg">
@@ -113,10 +125,54 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tablaSnaps" destination="E0C-aj-2xG" id="PMN-JT-Tky"/>
+                        <segue destination="ikb-eg-Dtc" kind="show" identifier="versnapsegue" id="fcn-zt-Bce"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iZA-0G-g0Q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1816" y="72"/>
+        </scene>
+        <!--Ver Snap View Controller-->
+        <scene sceneID="26J-7f-mVT">
+            <objects>
+                <viewController id="ikb-eg-Dtc" customClass="VerSnapViewController" customModule="EscobedoSnapchat" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="yAF-BS-4fy">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Mensaje: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5l4-32-Pz1">
+                                <rect key="frame" x="20" y="107" width="374" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Imagen Enviada: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bi4-7k-Jkl">
+                                <rect key="frame" x="20" y="145" width="130" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="09l-7g-dLb">
+                                <rect key="frame" x="20" y="188" width="374" height="263"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="CPO-UG-GC2"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="0Vb-Uk-Lcb"/>
+                    <connections>
+                        <outlet property="imageView" destination="09l-7g-dLb" id="wvz-9u-0Tk"/>
+                        <outlet property="lblMensaje" destination="5l4-32-Pz1" id="nhM-vZ-Buy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rCT-Np-1ba" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1815.9420289855075" y="775.44642857142856"/>
         </scene>
         <!--Enviar Mensaje-->
         <scene sceneID="5h8-fi-IhR">
@@ -168,11 +224,18 @@
                         <viewLayoutGuide key="safeArea" id="21x-OR-kIG"/>
                     </view>
                     <navigationItem key="navigationItem" title="Enviar Mensaje" id="LHQ-MF-FjY">
-                        <barButtonItem key="rightBarButtonItem" systemItem="camera" id="lmu-dW-wN8">
-                            <connections>
-                                <action selector="camaraTapped:" destination="BWJ-ey-HoI" id="qK8-JT-x2O"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="camera" id="lmu-dW-wN8">
+                                <connections>
+                                    <action selector="camaraTapped:" destination="BWJ-ey-HoI" id="qK8-JT-x2O"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem systemItem="organize" id="CiD-q4-mc4">
+                                <connections>
+                                    <action selector="mediaTapped:" destination="BWJ-ey-HoI" id="Qi4-yq-9TP"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="descripcionTextField" destination="FYw-xn-lSR" id="U7q-5G-9EH"/>
